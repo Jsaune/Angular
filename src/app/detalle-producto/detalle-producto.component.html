@@ -1,0 +1,12 @@
+@if (product()) {
+    <div>
+        <p class="py-4 px-8 bg-purple-500 m-4 rounded-full text-white"> El producto seleccionado es:
+        <strong>{{product()!.nombre}}</strong> - 
+        <strong class="text-red-800">S/. {{product()!.precio}}</strong>
+        
+        </p>
+        <button (click)="carrito()"
+        class="bg-orange-500 p-4 flex items-center justify-center rounded-full text-white hover:bg-blue-400">Agregar a carrito</button>
+    </div>
+    
+}
