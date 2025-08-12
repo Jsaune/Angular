@@ -1,0 +1,25 @@
+<p class="p-8 flex flex-col gap-4 border ">
+@if (productos.length>0) {
+    <h1 class="text-red-800 font-bold ">La cantidad de produtos es {{productos.length}} y son los siguientes:</h1>
+
+    <ul class="border border-green-500 p-4 flex flex-col gap-4 rounded-xl ">
+        @for(product of productos; track product.id; let i = $index){
+            <li class="bg-red-500 p-3 rounded-xl text-white text-bold">
+                {{i+1}}
+                @switch (product.categoria) {
+                    @case('galleta'){**}
+                    @case ('chocolate') {***}
+                    @case('gaseosa'){****}
+                }
+                {{product.nombre}} - {{product.precio}}
+
+            </li>
+        }@empty {
+            <p>No existen productos</p>
+        }
+    </ul>
+
+}@else {
+    <h2>No existen productos</h2>
+}
+</p>
